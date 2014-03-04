@@ -17,10 +17,8 @@
 # limitations under the License.
 #
 
-include_recipe 'python'
-include_recipe 'python::pip'
+file "carbon.conf"
 
-include_recipe "graphite::_user"
-include_recipe "graphite::_carbon_packages"
-include_recipe "graphite::_directories"
-include_recipe "graphite::_carbon_config"
+graphite_carbon_cache "default"
+
+carbon_conf_accumulator "default"
